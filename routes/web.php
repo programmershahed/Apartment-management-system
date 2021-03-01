@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddbuilingController;
+use App\Http\Controllers\UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//add building
+
+Route::get('/addbuilding', [AddbuilingController::class, 'addbuilding']);
+Route::post('/building/datastore', [AddbuilingController::class, 'buildingdatastore']);
+
+//add building
+
+Route::get('/addunit', [UnitController::class, 'addunit']);
+Route::post('/unit/datastore', [UnitController::class, 'unitstore']);
